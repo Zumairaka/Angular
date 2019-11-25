@@ -1,0 +1,22 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+ </div>
+<div> Months:
+  <select>
+    <option *ngFor = "let i of months">{{i}}</option>
+  </select>
+</div>
+<div>Months:
+  <ul>
+    <li *ngFor = "let i of months">{{i}}</li>
+  </ul>
+</div>
+<p *ngIf = 'isavailable'>Angular App is good</p>
+<p *ngIf = 'a>b'>A is Greater</p>
+<span *ngIf = 'a>b;else condition1'>{{a}} is greater than {{b}}</span>
+<ng-template #condition1><span>{{a}} is Less than {{b}}</span></ng-template><br>
+<input type="text" [(ngModel)]='name'>
+<p>{{name}}</p>
+<button (click)='myClickFunction($event)'>Click Me</button>

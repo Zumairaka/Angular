@@ -1,0 +1,8 @@
+#footer{
+    height: 100px;
+    width: 100%;
+    background-color: rgba(107, 107, 184, 0.514); 
+    color: azure;
+    text-align: center;
+    font-weight: bolder;
+}
