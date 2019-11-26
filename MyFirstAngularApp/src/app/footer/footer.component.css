@@ -5,4 +5,7 @@
     color: azure;
     text-align: center;
     font-weight: bolder;
+    position: fixed;
+    left:0;
+    bottom:0;
 }

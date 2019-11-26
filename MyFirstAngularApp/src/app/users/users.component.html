@@ -1,0 +1,10 @@
+<h1>Users</h1>
+<input type="button" name="button" value="View User" (click)='getUsers()'>
+
+<ul *ngFor = "let i of userData">
+  <li id="name">Name: {{i.name}}</li>
+  <li>Email: {{i.email}}</li>
+  <li>City: {{i.address.city}}</li>
+  <li>Website: {{i.website}}</li>
+  <li>Company Name: {{i.company.name}}</li>
+</ul>
