@@ -1,0 +1,45 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 bg-dark">
+                <form (ngSubmit) = "AddProduct()">
+                    <div class="form-group">
+                        <label>Product Id</label>
+                        <input type="text" class="form-control" name="p_id" [(ngModel)]="productItem.productId">
+                    </div>
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input type="text" class="form-control" name="p_name" [(ngModel)]="productItem.productName">
+                    </div>
+                    <div class="form-group">
+                        <label>Product Code</label>
+                        <input type="text" class="form-control" name="p_code" [(ngModel)]="productItem.productCode">
+                    </div>
+                    <div class="form-group">
+                        <label>Release Date</label>
+                        <input type="text" class="form-control" name="p_date" [(ngModel)]="productItem.releaseDate">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" class="form-control" name="p_desc" [(ngModel)]="productItem.description">
+                    </div>
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="text" class="form-control" name="p_price" [(ngModel)]="productItem.price">
+                    </div>
+                    <div class="form-group">
+                        <label>Star Rating</label>
+                        <input type="text" class="form-control" name="p_rating" [(ngModel)]="productItem.starRating">
+                    </div>
+                    <div class="form-group">
+                        <label>Product Image</label>
+                        <input type="text" class="form-control" name="p_image" [(ngModel)]="productItem.imageUrl">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="Add Product" name="addProduct">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

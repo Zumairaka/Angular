@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header">
+    <h3 class="font-weight-bold">Product List</h3>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table-dark table">
+        <thead>
+          <tr>
+            <th><input type="button" name="showImage" (click)="showImage()" value={{value}} class="btn btn-primary"></th>
+            <th>Product</th>
+            <th>Code</th>                     <!--we can use ternary operation {{flag ? 'Hide':'Show'}} Image-->
+            <th>Available</th>
+            <th>Price</th>
+            <th>5 Star Rating</th>
+          </tr>
+        </thead>
+        <tbody *ngIf = "products && products.length"> <!-- <img [src] = "i.imageUrl"-->
+          <tr *ngFor = "let i of products">
+            <td ><img *ngIf = "flag" src = "{{i.imageUrl}}"></td>
+            <td>{{i.productName}}</td>
+            <td>{{i.productCode}}</td>
+            <td>{{i.releaseDate}}</td>
+            <td>{{i.price}}</td>
+            <td>{{i.starRating}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
