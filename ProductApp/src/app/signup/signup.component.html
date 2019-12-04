@@ -1,0 +1,53 @@
+<div class = "container-fluid col-sm-12 col-md-12 col-lg-12 col-xl-12">
+    <div class = "container-fluid" id = "content">
+        <div class = "text-danger text-center font-weight-bold">
+            <p>Fields With * Are Mandatory</p>
+        </div> 
+        <div class="bg-dark" id="signup">
+        <form class = "form-group text-secondary" (ngSubmit)="signUp()">           
+            <div class = "form-group">
+                <label>First Name*</label>
+                <input type = "text" class = "form-control" name = "fname" [(ngModel)]="userData.firstName" placeholder = "Enter First Name" required>
+            </div>
+            <div class = "form-group">
+                <label>Last Name</label>
+                <input type = "text" class = "form-control" name = "lname" [(ngModel)]="userData.lastName" placeholder = "Enter Last Name" required>
+            </div>
+            <div class = "form-group">
+                <label>User Name*</label>
+                <input type = "text" class = "form-control" name = "uname" [(ngModel)]="userData.userName" placeholder = "Enter User Name" required>
+            </div>
+            <div class = "form-group">
+                <label>Create Password*</label>
+                <input type = "password" class = "form-control" name = "password" [(ngModel)]="userData.password" required>
+            </div>
+            <div class = "form-group">
+                <label>Confirm Password*</label>
+                <input type = "password" class = "form-control" name = "confirmpassword" [(ngModel)]="userData.confirmPassword" required>
+            </div>
+            <div class = "form-group">
+                <label>Email*</label>
+                <input type = "email" class = "form-control" name = "email" [(ngModel)]="userData.email" placeholder = "Enter Email" required>
+            </div>
+            <div class = "form-group">
+                <label>Phone Number*</label>
+                <input type = "text" class = "form-control" name = "phone" [(ngModel)]="userData.phoneNumber" required placeholder = "Phone Number">
+            </div>
+            <div class = "form-group">
+                <label class = "form-inline" >Gender*</label>
+                <input type = "radio" class = "form-group" name = "gender" value = "male" [(ngModel)]="userData.gender" checked> Male
+                <input type = "radio" class = "form-group" name = "gender" value = "female" [(ngModel)]="userData.gender"> Female
+            </div>
+            <div class = "form-group">
+                <label>Address*</label>
+                <textarea name = "address" class = "form-control" [(ngModel)]="userData.address" required></textarea>                 
+            </div>
+            <div class = "form-group">
+                <input type = "submit" class = "btn btn-success" value = "Sign Up" name = "submit" id = "submitbt">
+                <button type = "reset" class = "btn btn-danger" value = "reset">Reset</button>
+                <button class="btn btn-secondary" (click)="cancel()">Cancel</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

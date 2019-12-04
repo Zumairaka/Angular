@@ -2,3 +2,21 @@ img{
     height:80px;
     width:80px;
 }
+#edit{
+    width: 80px;
+}
+#delete{
+    margin-top: 10px;
+    width: 80px;
+}
+#link{
+    margin-right: 20px;
+    font-weight: bold;
+    color: white;
+}
+nav{
+    height: 60px;
+}
+#name{
+    font-size: large;
+}

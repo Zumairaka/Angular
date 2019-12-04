@@ -1,0 +1,21 @@
+#content{
+    padding-top:6%;
+    padding-left: 34%;
+    padding-right: 34%;
+}
+#login{
+    padding: 5%;
+}
+#submit{
+    margin-left: 29%;
+    margin-right: 7%;
+}
+label{
+    color: white;
+    font-weight: bold;
+    margin-right: 3%;
+}
+#signup{
+    font-weight: bold;
+    color: rgb(97, 97, 231);
+}
