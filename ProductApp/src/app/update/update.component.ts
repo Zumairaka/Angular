@@ -22,7 +22,6 @@ export class UpdateComponent implements OnInit {
   ngOnInit(product) {
     this.products = product;
     console.log(product);
-    alert('hai');
     //this.router.navigate(['update']);
   }
 
