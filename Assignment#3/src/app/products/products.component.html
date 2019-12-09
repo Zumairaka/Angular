@@ -1,0 +1,55 @@
+<div class="text-center font-weight-bold text-dark" id="name">
+  <label>Welcome {{name}} !</label>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  <ul class=" nav">
+    <li class="navbar-item">
+      <button class="btn btn-link" (click)="link(1)" id="link">Products</button>
+    </li>
+    <li class="navbar-item">
+      <button class="btn btn-link" (click)="link(2)" id="link">Add Products</button>
+    </li>
+    <li class="navbar-item">
+      <button class="btn btn-link" id="link"(click)="logout()">Logout</button>
+    </li>
+  </ul>
+</nav>
+
+
+<div class="card">
+  <div class="card-header text-center">
+    <h3 class="font-weight-bold">Products List</h3>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table-dark table">
+        <thead>
+          <tr>
+            <th><input type="button" name="showImage" (click)="showImage()" value={{value}} class="btn btn-primary"></th>
+            <th>Product</th>
+            <th>Code</th>                     <!--we can use ternary operation {{flag ? 'Hide':'Show'}} Image-->
+            <th>Available</th>
+            <th>Price</th>
+            <th>5 Star Rating</th>
+            <th>Update</th>
+          </tr>
+        </thead>
+        <tbody *ngIf = "products && products.length"> <!-- <img [src] = "i.imageUrl"-->
+          <tr *ngFor = "let i of products">
+            <td ><img *ngIf = "flag" src = "{{i.imageUrl}}"></td>
+            <td>{{i.productName}}</td>
+            <td>{{i.productCode}}</td>
+            <td>{{i.releaseDate}}</td>
+            <td>{{i.price}}</td>
+            <td>{{i.starRating}}</td>
+            <td>
+                <input type="submit" name="update" id="edit" class="btn btn-success" (click)="edit(i)" value="Edit"><br>
+                <input type="submit" name="delete" id="delete" class="btn btn-danger" (click)="delete(i._id)" value="Delete">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -9,7 +9,7 @@ import { Router, RouterModule } from '@angular/router';
   providedIn: 'root'
 })
 export class ProductsService {
-
+  product: IProduct;
   constructor(private http: HttpClient, public router: Router) { }
 
   getProductList() {
@@ -17,20 +17,34 @@ export class ProductsService {
   }
 
   newProduct(item) {
-    return this.http.post('http://localhost:3000/insert', {'product': item}).subscribe(() => {
-      this.router.navigate(['addProducts']);
-    });
+    return this.http.post('http://localhost:3000/insert', {'product': item});
+  }
+
+  SaveUpdate(item) {
+    return this.http.post('http://localhost:3000/update', {'product': item});
+  }
+
+  getUser(user) {
+    console.log(user);
+    return this.http.post('http://localhost:3000/login', user);
   }
 
   newUser(user) {
-    return this.http.post('http://localhost:3000/signup', {'user': user}).subscribe((data) => {
-      this.router.navigate(['login']);
-    });
+    return this.http.post('http://localhost:3000/signup', {'user': user});
   }
 
   deleteProduct(id) {
-    return this.http.post('http://localhost:3000/delete', {'id' : id}).subscribe(() => {
-      this.router.navigate(['products']);
-    });
+    return this.http.post('http://localhost:3000/delete', {'id' : id});
   }
+
+  // setProduct(product) {
+    // this.product = product;
+    // console.log(this.product);
+   // this.router.navigate(['update']);
+  // }
+
+  // getProduct() {
+    // console.log(this.product);
+    // return this.product;
+ // }
 }

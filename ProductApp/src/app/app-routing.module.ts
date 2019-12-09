@@ -1,7 +1,7 @@
 import { UpdateComponent } from './update/update.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component, VERSION } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProductsComponent } from './products/products.component';
 import { AddProductsComponent } from './add-products/add-products.component';

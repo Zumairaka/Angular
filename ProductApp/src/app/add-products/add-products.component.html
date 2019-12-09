@@ -1,7 +1,3 @@
-<div class="text-center font-weight-bold text-dark" id="name">
-    <span>Welcome {{name}} !</span>
-</div>
-
 <nav class="navbar navbar-expand-sm bg-dark col-sm-12 col-md-12 col-lg-12 col-xl-12">
     <ul class=" nav">
         <li class="navbar-item">
@@ -23,38 +19,93 @@
                 <h3>Enter Product Details</h3>
             </div>
             <div class="col-md-6 offset-md-3 bg-dark">            
-                <form (ngSubmit) = "AddProduct()">
+                <form [formGroup] = "productForm" (ngSubmit) = "AddProduct()">
                     <div class="form-group">
                         <label>Product Id</label>
-                        <input type="text" class="form-control" name="p_id" [(ngModel)]="productItem.productId">
+                        <input type="text" class="form-control" placeholder="Enter Product ID" formControlName="productId" [ngClass]="{'is-invalid': submitted && f.productId.errors, 'is-valid': submitted && f.productId.valid}">
+                        <div *ngIf ="submitted && f.productId.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.productId.errors.required">Product ID is required!</div>
+                            <div *ngIf="submitted && f.productId.errors.pattern">Product ID must be a number!</div>
+                        </div>
+                        <div *ngIf="submitted && f.productId.valid" class="valid-feedback">
+                            <div>Product ID is OK</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Product Name</label>
-                        <input type="text" class="form-control" name="p_name" [(ngModel)]="productItem.productName">
+                        <input type="text" class="form-control" formControlName="productName" placeholder="Enter Product Name" [ngClass]="{'is-invalid': submitted && f.productName.errors, 'is-valid': submitted && f.productName.valid}">
+                        <div *ngIf ="submitted && f.productName.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.productName.errors.required">Product Name is required!</div>
+                            <div *ngIf="submitted && f.productName.errors.minlength">Product Name must be atleast 2 characters!</div>
+                        </div>
+                        <div *ngIf="submitted && f.productName.valid" class="valid-feedback">
+                            <div>Product Name is OK</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Product Code</label>
-                        <input type="text" class="form-control" name="p_code" [(ngModel)]="productItem.productCode">
+                        <input type="text" class="form-control" formControlName="productCode" placeholder="Enter Product Code" [ngClass]="{'is-invalid': submitted && f.productCode.errors, 'is-valid': submitted && f.productCode.valid}">
+                        <div *ngIf ="submitted && f.productCode.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.productCode.errors.required">Product Code is required!</div>
+                        </div>
+                        <div *ngIf="submitted && f.productCode.valid" class="valid-feedback">
+                            <div>Product Code is OK</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Release Date</label>
-                        <input type="text" class="form-control" name="p_date" [(ngModel)]="productItem.releaseDate">
+                        <input type="date" class="form-control" formControlName="releaseDate" placeholder="Enter Release Date" [ngClass]="{'is-invalid': submitted && f.releaseDate.errors, 'is-valid': submitted && f.releaseDate.valid}">
+                        <div *ngIf ="submitted && f.releaseDate.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.releaseDate.errors.required">Release Date required!</div>
+                        </div>
+                        <div *ngIf="submitted && f.releaseDate.valid" class="valid-feedback">
+                            <div>Release Date is OK</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Description</label>
-                        <input type="text" class="form-control" name="p_desc" [(ngModel)]="productItem.description">
+                        <input type="text" class="form-control" formControlName="description" placeholder="Enter Description" [ngClass]="{'is-invalid': submitted && f.description.errors, 'is-valid': submitted && f.description.valid}">
+                        <div *ngIf ="submitted && f.description.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.description.errors.required">Description is required!</div>
+                        </div>
+                        <div *ngIf="submitted && f.description.valid" class="valid-feedback">
+                            <div>Description is OK</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Price</label>
-                        <input type="text" class="form-control" name="p_price" [(ngModel)]="productItem.price">
+                        <input type="text" class="form-control" formControlName="price" placeholder="Enter Price" [ngClass]="{'is-invalid': submitted && f.price.errors, 'is-valid': submitted && f.price.valid}">
+                        <div *ngIf ="submitted && f.price.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.price.errors.required">Price is required!</div>
+                            <div *ngIf="submitted && f.price.errors.min">Price must be minimum 1</div>
+                            <div *ngIf="submitted && f.price.errors.pattern">Price must be a number</div>
+                        </div>
+                        <div *ngIf="submitted && f.price.valid" class="valid-feedback">
+                            <div>Price is OK</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Star Rating</label>
-                        <input type="text" class="form-control" name="p_rating" [(ngModel)]="productItem.starRating">
+                        <input type="text" class="form-control" formControlName="starRating" placeholder="Enter Star Rating" [ngClass]="{'is-invalid': submitted && f.starRating.errors, 'is-valid': submitted && f.starRating.valid}">
+                        <div *ngIf ="submitted && f.starRating.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.starRating.errors.required">Star Rating is required!</div>
+                            <div *ngIf="submitted && f.starRating.errors.min">Star rating must be minimum 1</div>
+                            <div *ngIf="submitted && f.starRating.errors.max">Star rating must be maximum 5</div>
+                            <div *ngIf="submitted && f.starRating.errors.pattern">Star rating must be a number</div>
+                        </div>
+                        <div *ngIf="submitted && f.starRating.valid" class="valid-feedback">
+                            <div>Star rating is OK</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Product Image</label>
-                        <input type="text" class="form-control" name="p_image" [(ngModel)]="productItem.imageUrl">
+                        <input type="text" class="form-control" formControlName="imageUrl" placeholder="Enter Image Url" [ngClass]="{'is-invalid': submitted && f.imageUrl.errors, 'is-valid': submitted && f.imageUrl.valid}">
+                        <div *ngIf ="submitted && f.imageUrl.errors" class="invalid-feedback">
+                            <div *ngIf="submitted && f.imageUrl.errors.required">Image Url is required!</div>
+                        </div>
+                        <div *ngIf="submitted && f.imageUrl.valid" class="valid-feedback">
+                            <div>Image Url is OK</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="Add Product" name="addProduct" id="submit">

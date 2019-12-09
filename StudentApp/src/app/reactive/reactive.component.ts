@@ -14,21 +14,21 @@ export class ReactiveComponent implements OnInit {
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
-      lastName: ['',Validators.required],
-      email: ['',[Validators.required, Validators.email]],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
-   get f() {return this.registerForm.controls};
+   get f() {return this.registerForm.controls ; }
 
-   onSubmit(){
+   onSubmit() {
      this.submitted = true;
 
-     if(this.registerForm.invalid){
+     if (this.registerForm.invalid) {
        return;
      }
 
-     alert('Success!!' +this.registerForm.get("firstName").value);
+     alert('Success!!' + this.registerForm.get('firstName').value);
    }
 
 }

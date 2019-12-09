@@ -1,0 +1,17 @@
+#content{
+    padding-right: 30%;
+    padding-left: 30%;
+}
+#signup{
+    padding: 5%;
+}
+label{
+    color: white;
+    font-weight: bold;
+}
+#submitbt{
+    margin-left: 20%;
+}
+button{
+    margin-left: 7%;
+}
